@@ -8,7 +8,7 @@
 buildscript {
     //    所有项目共享的属性列表
     ext["springBootVersion"] = "3.0.2"
-    ext["lombok.version"] = "1.18.12"
+    ext["lombokVersion"] = "1.18.22"
     ext["springCloudVersion"] = "2022.0.0"
     ext["dubboVersion"] = "3.2.9"
     ext["springCloudAlibaba"] = "2022.0.0.0"
@@ -55,6 +55,13 @@ allprojects {
     repositories {
         maven { url "https://maven.aliyun.com/repository/public" }
         mavenCentral()
+    }
+
+    dependencies{
+        annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+        compileOnly "org.projectlombok:lombok:${lombokVersion}"
+        testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+        testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
     }
 
     dependencyManagement {
