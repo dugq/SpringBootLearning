@@ -16,6 +16,7 @@ buildscript {
 //配置gradle 插件的依赖
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.5.RELEASE"
     }
 //配置gradle插件仓库
     repositories {
