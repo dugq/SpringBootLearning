@@ -15,7 +15,7 @@ management: # springBoot actuator配置
         include: '*'  #暴露所有端点
         exclude: info #在暴露所有端点的前提下，可以排除某个端点(不暴露)
 
-  metrics:
+metrics:
     mongo:
       command:
         enabled: false

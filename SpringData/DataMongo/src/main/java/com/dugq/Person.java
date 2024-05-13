@@ -1,7 +1,10 @@
 package com.dugq;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serial;
@@ -16,9 +19,15 @@ public class Person implements Serializable {
     private static final long serialVersionUID = 3666691069758351826L;
 
     private String id;
+    private Long userId;
     private String name;
     private int age;
     private String gender;
     private String email;
     private String phone;
+    @GeoSpatialIndexed(name = "location")
+    @JsonProperty("location")
+    private Point location;
+    private double distance;
+
 }

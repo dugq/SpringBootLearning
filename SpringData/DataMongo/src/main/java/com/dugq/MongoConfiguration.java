@@ -51,6 +51,10 @@ public class MongoConfiguration {
         return new MongoTemplate(simpleMongoClientDatabaseFactory);
     }
 
+    @Bean
+    public MongoPageHelper mongoPageHelper(MongoTemplate mongoTemplate){
+        return new MongoPageHelper(mongoTemplate);
+    }
 
 
 }
