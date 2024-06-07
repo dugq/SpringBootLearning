@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.geo.Point;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -64,7 +65,7 @@ public class CustomMongoConfigurationTest {
         person.setGender("男");
         person.setEmail(name +"@example.com");
         person.setPhone(phone);
-        person.setLocation(new Point(random.nextFloat(180),random.nextFloat(90)));
+        person.setLocation(new GeoJsonPoint(random.nextFloat(180),random.nextFloat(90)));
         return person;
     }
 
@@ -151,7 +152,7 @@ public class CustomMongoConfigurationTest {
             person.setGender("男");
             person.setEmail(person.getName() +"@example.com");
             person.setPhone("188"+id%100000L);
-            person.setLocation(new Point(random.nextFloat(180),random.nextFloat(90)));
+            person.setLocation(new GeoJsonPoint(random.nextFloat(180),random.nextFloat(90)));
             mongoTemplate.save(person);
         }
         return "success";

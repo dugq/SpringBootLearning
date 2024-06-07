@@ -1,7 +1,7 @@
 dugq:
   demo:
     strategy:
-      mongo: clientFactory # clientFactory mongoClient databaseFactory
+      mongo: databaseFactory # clientFactory mongoClient databaseFactory
 server:
   port: 8080
 spring:
