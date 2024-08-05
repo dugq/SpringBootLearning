@@ -1,0 +1,37 @@
+<configuration>
+    <!-- 定义日志输出格式，包含行数 -->
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36}:%L - %msg%n"/>
+
+    <!-- 控制台输出（同步） -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 文件输出（异步） -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/application.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 异步输出到文件 -->
+    <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE"/>
+        <!-- 配置异步队列大小，默认是256 -->
+        <queueSize>512</queueSize>
+        <!-- 配置丢弃日志的阈值，默认是80 -->
+        <discardingThreshold>0</discardingThreshold>
+    </appender>
+
+    <!-- 根日志级别和输出目标 -->
+    <root level="error">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ASYNC_FILE"/>
+    </root>
+    <logger name="org.apache.dubbo" level="debug"/>
+    <logger name="com.example" level="debug"/>
+</configuration>

@@ -10,8 +10,9 @@ buildscript {
     ext["springBootVersion"] = "3.0.2"
     ext["lombokVersion"] = "1.18.22"
     ext["springCloudVersion"] = "2022.0.0"
-    ext["dubboVersion"] = "3.2.9"
+    ext["dubboVersion"] = "3.3.0-beta.4"
     ext["springCloudAlibaba"] = "2022.0.0.0"
+    ext["protobufJavaVersion"]="3.19.6"
 
 //配置gradle 插件的依赖
     dependencies {
@@ -63,6 +64,7 @@ allprojects {
         compileOnly "org.projectlombok:lombok:${lombokVersion}"
         testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
         testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+        implementation 'org.springframework.boot:spring-boot-starter-logging'
     }
 
     dependencyManagement {
@@ -75,6 +77,9 @@ allprojects {
             // 这个插件还可以在这里对一些jar包版本进行声明： 这样后续在使用的时候就可以不用添加版本
             // 对于一些公用版本，这里可以进行统一的控制
             dependency 'org.apache.commons:commons-lang3:3.12.0'
+            dependency "org.apache.dubbo:dubbo:${dubboVersion}"
+            dependency "com.google.protpringssdfdsfobuf:protobuf-java:${protobufJavaVersion}"
+
         }
     }
 

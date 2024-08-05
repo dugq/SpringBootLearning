@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.config.AbstractFactoryBean;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("myBean")
 @Slf4j
 public class MyFactoryBean extends AbstractFactoryBean<TestBean> {
 

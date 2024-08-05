@@ -11,6 +11,8 @@ public class BeanDefinitionTest {
 
     @Autowired
     private TestBean testBean;
+    @Autowired
+    private TestBean2 testBean2;
 
     @GetMapping("/factory/say")
     public String say(){

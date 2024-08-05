@@ -1,0 +1,31 @@
+server:
+  port: 8003
+
+logging:
+  level:
+    org.apache.dubbo: DEBUG
+    com.example: DEBUG
+
+dubbo:
+  logger: slf4j
+  application:
+    name: test
+  protocol: # 定义tri协议，和dubbo协议的方式不一样。tmd
+    name: tri
+    port: 20881
+    serialization: protobuf
+  registry:
+    address: nacos://123.60.22.21:8848
+    username: nacos
+    password: zzq
+    group: Dubbo-dev
+    parameters:
+      namespace: 3ca174c4-2a72-495c-b1a5-ceffaaf8083c
+    use-as-config-center: false   # 避免注册中心数据出现在配置中心
+    use-as-metadata-center: false # 避免注册中心数据出现在配置中心
+    useAsMetadataCenter: false
+    useAsConfigCenter: false
+    register-mode: instance
+  debug: true
+
+debug: true

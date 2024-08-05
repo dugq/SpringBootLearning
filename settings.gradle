@@ -10,3 +10,6 @@
 rootProject.name = 'SpringBootLearning'
 include 'SpringData:DataMongo'
 include('SpringBoot')
+include 'springDubboProvider'
+include 'springDubboConsumer'
+
