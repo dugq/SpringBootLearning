@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: SpringBootLearning
+  profiles:
+    active: dev
 management: # springBoot actuator配置
   endpoints:
     web:

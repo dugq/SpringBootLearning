@@ -12,4 +12,5 @@ include 'SpringData:DataMongo'
 include('SpringBoot')
 include 'springDubboProvider'
 include 'springDubboConsumer'
+include 'SpringCache'
 

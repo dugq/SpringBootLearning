@@ -65,6 +65,7 @@ allprojects {
         testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
         testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
         implementation 'org.springframework.boot:spring-boot-starter-logging'
+        implementation 'org.apache.commons:commons-lang3'
     }
 
     dependencyManagement {
