@@ -13,4 +13,5 @@ include('SpringBoot')
 include 'springDubboProvider'
 include 'springDubboConsumer'
 include 'SpringCache'
+include 'SpringAI'
 
